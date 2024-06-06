@@ -6,13 +6,13 @@ ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
 # Install dependensi
-RUN pip install flask requests pytest
 
 # Menyalin kode aplikasi Anda ke dalam image
 COPY . /app
 WORKDIR /app
 COPY ~/.deepface/weights/. ~/.deepface/weights/
 
+RUN pip install -r requirements.txt
 # Expose port 5000
 EXPOSE 5000
 
